@@ -1,0 +1,13 @@
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.csprojAssemblyReference.cache
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.csproj.CoreCompileInputs.cache
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.AssemblyInfoInputs.cache
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.AssemblyInfo.cs
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.exe
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.deps.json
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.runtimeconfig.json
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.runtimeconfig.dev.json
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.dll
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\bin\Debug\netcoreapp3.1\GCExchange.pdb
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.dll
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.pdb
+D:\Programs\GitHub\GiftCardXCApp\GCExchange\obj\Debug\netcoreapp3.1\GCExchange.genruntimeconfig.cache
