@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\minhd\\OneDrive\\Documents\\GitHub\\ICSAPR20\\GCExchange\\GCExchange\\GCExchange.csproj": {}
+    "D:\\Programs\\GitHub\\GiftCardXCApp\\GCExchange\\GCExchange.csproj": {}
   },
   "projects": {
-    "C:\\Users\\minhd\\OneDrive\\Documents\\GitHub\\ICSAPR20\\GCExchange\\GCExchange\\GCExchange.csproj": {
+    "D:\\Programs\\GitHub\\GiftCardXCApp\\GCExchange\\GCExchange.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\minhd\\OneDrive\\Documents\\GitHub\\ICSAPR20\\GCExchange\\GCExchange\\GCExchange.csproj",
+        "projectUniqueName": "D:\\Programs\\GitHub\\GiftCardXCApp\\GCExchange\\GCExchange.csproj",
         "projectName": "GCExchange",
-        "projectPath": "C:\\Users\\minhd\\OneDrive\\Documents\\GitHub\\ICSAPR20\\GCExchange\\GCExchange\\GCExchange.csproj",
+        "projectPath": "D:\\Programs\\GitHub\\GiftCardXCApp\\GCExchange\\GCExchange.csproj",
         "packagesPath": "C:\\Users\\minhd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\minhd\\OneDrive\\Documents\\GitHub\\ICSAPR20\\GCExchange\\GCExchange\\obj\\",
+        "outputPath": "D:\\Programs\\GitHub\\GiftCardXCApp\\GCExchange\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
