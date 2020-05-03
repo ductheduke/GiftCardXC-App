@@ -4,26 +4,14 @@ using System.Text;
 
 namespace GCExchange
 {
-	enum TypeOfUser
-	{
-		Buyer,
-		Seller,
-	}
 	class User
 	{
 		private static int lastUserID = 0;
 
 		#region Properties
-		/// <summary>
-		/// Unique UserID for the User
-		/// </summary>
 		public int UserID { get; private set; }
-		public TypeOfUser UserType { get; set; } 
 		public string UserName { get; set; }
 		public string EmailAddress { get; set; }
-		public int BankAccountNo { get; set; }
-		public int BankRoutingNo { get; set; }
-		public string Address { get; set; }
 		public decimal Balance { get; private set; }
 		public DateTime CreatedDate { get; private set; }
 		#endregion
