@@ -77,11 +77,11 @@ namespace GCExchange
 		public static void Deposit(int userID, decimal amount)
 		{
 			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
-			//if (user == null)
-			//{
-				//Console.WriteLine("UserID is invalid!");
-				//return;
-			//}
+			if (user == null)
+			{
+				Console.WriteLine("This UserID is invalid!");
+				return;
+			}
 			user.Deposit(amount);
 			var transaction = new Transaction
 			{
@@ -97,11 +97,11 @@ namespace GCExchange
 		public static void Withdraw(int userID, decimal amount)
 		{
 			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
-			//if (user == null)
-			//{
-				//Console.WriteLine("UserID is invalid!");
-				//return;
-			//}
+			if (user == null)
+			{
+				Console.WriteLine("This UserID is invalid!");
+				return;
+			}
 			user.Withdraw(amount);
 			var transaction = new Transaction
 			{
