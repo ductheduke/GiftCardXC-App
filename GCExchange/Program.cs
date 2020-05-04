@@ -32,7 +32,7 @@ namespace GCExchange
 						Console.Write("What's your Email Address? ");
 						var emailAddress = Console.ReadLine();
 
-						Console.WriteLine("Amount to deposit to buy gift card: ");
+						Console.WriteLine("How much do you want to fund your account to purchase gift cards? ");
 						var amount = Convert.ToDecimal(Console.ReadLine());
 
 						var user = Exchange.Register(userName, emailAddress, amount);
