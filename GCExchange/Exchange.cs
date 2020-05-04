@@ -7,10 +7,7 @@ namespace GCExchange
 {
 	static class Exchange
 	{
-		private static List<User> users = new List<User>();
-		private static List<Card> cards = new List<Card>();
-		private static List<Transaction> transactions = new List<Transaction>();
-		
+		private static ExchangeContext db = new ExchangeContext();
 
 		public static User Register(string userName,
 									string emailAddress,
@@ -21,14 +18,15 @@ namespace GCExchange
 				UserName = userName,
 				EmailAddress = emailAddress,
 			};
-			users.Add(user);
+			
+			db.Users.Add(user);
 
 			if (initialAmount > 0)
 			{
 				Deposit(user.UserID, initialAmount);
 			}
-			///db.Accounts.Add(account);
-			///db.SaveChanges();
+			
+			db.SaveChanges();
 			return user;
 		}
 
@@ -43,35 +41,34 @@ namespace GCExchange
 				CardAmount = cardAmount,
 				EmailAddress = emailAddress,
 			};
-			cards.Add(card);
-
-			///db.Accounts.Add(account);
-			///db.SaveChanges();
+			
+			db.Cards.Add(card);
+			db.SaveChanges();
 			return card;
 		}
 
 
 		public static IEnumerable<User> GetUsers(string emailAddress)
 		{
-			return users.Where(a => a.EmailAddress == emailAddress);
+			return db.Users.Where(a => a.EmailAddress == emailAddress);
 		}
 
 
 		public static IEnumerable<Card> GetCards(string emailAddress)
 		{
-			return cards.Where(a => a.EmailAddress == emailAddress);
+			return db.Cards.Where(a => a.EmailAddress == emailAddress);
 		}
 
 
 		public static IEnumerable<User> GetBalance(string emailAddress)
 		{
-			return users.Where(a => a.EmailAddress == emailAddress);
+			return db.Users.Where(a => a.EmailAddress == emailAddress);
 		}
 
 
 		public static IEnumerable<Transaction> GetTransactionsByUserID(int userID)
 		{
-			return transactions
+			return db.Transactions
 					.Where(t => t.UserID == userID)
 					.OrderByDescending(t => t.TransactionDate);
 		}
@@ -79,11 +76,13 @@ namespace GCExchange
 
 		public static void Deposit(int userID, decimal amount)
 		{
-			// Locate the account using LINQ
-			var user = users.SingleOrDefault(user => user.UserID == userID);
-			// Deposit amount into the account
+			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
+			//if (user == null)
+			//{
+				//Console.WriteLine("UserID is invalid!");
+				//return;
+			//}
 			user.Deposit(amount);
-			// Log the transaction
 			var transaction = new Transaction
 			{
 				TransactionDate = DateTime.Now,
@@ -91,17 +90,19 @@ namespace GCExchange
 				TransactionType = TypeOfTransaction.Credit,
 				UserID = userID
 			};
-			transactions.Add(transaction);
-			//db.SaveChanges();
+			db.Transactions.Add(transaction);
+			db.SaveChanges();
 		}
 
 		public static void Withdraw(int userID, decimal amount)
 		{
-			// Locate the account using LINQ
-			var user = users.SingleOrDefault(user => user.UserID == userID);
-			// Withdraw amount from the account
+			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
+			//if (user == null)
+			//{
+				//Console.WriteLine("UserID is invalid!");
+				//return;
+			//}
 			user.Withdraw(amount);
-			// Log the transaction
 			var transaction = new Transaction
 			{
 				TransactionDate = DateTime.Now,
@@ -109,10 +110,8 @@ namespace GCExchange
 				TransactionType = TypeOfTransaction.Debit,
 				UserID = userID
 			};
-			transactions.Add(transaction);
-			//db.SaveChanges();
+			db.Transactions.Add(transaction);
+			db.SaveChanges();
 		}
-
-
 	}
 }
