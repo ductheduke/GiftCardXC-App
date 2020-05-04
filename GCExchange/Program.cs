@@ -10,8 +10,8 @@ namespace GCExchange
 			while (true)
 			{
 				Console.WriteLine("0. Exit");
-				Console.WriteLine("1. Buy Gift Cards");
-				Console.WriteLine("2. Sell Gift Cards");
+				Console.WriteLine("1. Create an Account");
+				Console.WriteLine("2. List your Gift Cards for Sale");
 				Console.WriteLine("3. Deposit Funds");
 				Console.WriteLine("4. Withdraw Funds");
 				Console.WriteLine("5. View Account Balance");
@@ -32,11 +32,8 @@ namespace GCExchange
 						Console.Write("What's your Email Address? ");
 						var emailAddress = Console.ReadLine();
 
-						Console.WriteLine("How much do you want to fund your account to purchase gift cards? ");
-						var amount = Convert.ToDecimal(Console.ReadLine());
-
-						var user = Exchange.Register(userName, emailAddress, amount);
-						Console.WriteLine("Your buyer account has been created! Here's your account details and Happy Shopping!");
+						var user = Exchange.Register(userName, emailAddress);
+						Console.WriteLine("Your account has been created! Here's your account details and Happy Shopping!");
 						Console.WriteLine($"UserID: {user.UserID}, Name: {user.UserName}, Email: {user.EmailAddress}, B: {user.Balance:C}, CD: {user.CreatedDate}");
 						break;
 
@@ -61,7 +58,7 @@ namespace GCExchange
 						var userID = Convert.ToInt32(Console.ReadLine());
 
 						Console.Write("Amount to Deposit: ");
-						amount = Convert.ToDecimal(Console.ReadLine());
+						var amount = Convert.ToDecimal(Console.ReadLine());
 
 						Exchange.Deposit(userID, amount);
 						Console.WriteLine("Deposit successfully completed!");
