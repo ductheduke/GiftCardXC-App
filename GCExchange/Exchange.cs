@@ -79,8 +79,8 @@ namespace GCExchange
 			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
 			if (user == null)
 			{
-				Console.WriteLine("This UserID is invalid!");
-				return;
+				// Raise an exception
+				throw new ArgumentException("UserID is invalid!");
 			}
 			user.Deposit(amount);
 			var transaction = new Transaction
@@ -99,8 +99,8 @@ namespace GCExchange
 			var user = db.Users.SingleOrDefault(user => user.UserID == userID);
 			if (user == null)
 			{
-				Console.WriteLine("This UserID is invalid!");
-				return;
+				// Raise an exception
+				throw new ArgumentException("UserID is invalid!");
 			}
 			user.Withdraw(amount);
 			var transaction = new Transaction
