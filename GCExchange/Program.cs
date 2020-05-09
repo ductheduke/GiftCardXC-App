@@ -38,43 +38,98 @@ namespace GCExchange
 						break;
 
 					case "2":
-						Console.Write("What's your Email Address? ");
-						emailAddress = Console.ReadLine();
+						try
+						{
+							Console.Write("What's your Email Address? ");
+							emailAddress = Console.ReadLine();
 
-						Console.Write("What's the Vendor Name of your Gift Card? ");
-						var vendorName = Console.ReadLine();
-						
-						Console.Write("What's the Card Amount? ");
-						var cardAmount = Convert.ToDecimal(Console.ReadLine());
+							Console.Write("What's the Vendor Name of your Gift Card? ");
+							var vendorName = Console.ReadLine();
 
-						Exchange.List(vendorName, cardAmount, emailAddress);
-						Console.WriteLine("Your card is now listed for sale!");
+							Console.Write("What's the Card Amount? ");
+							var cardAmount = Convert.ToDecimal(Console.ReadLine());
+
+							Exchange.List(vendorName, cardAmount, emailAddress);
+							Console.WriteLine("Your card is now listed for sale!");
+						}
+						catch (FormatException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (OverflowException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (ArgumentException ax)
+						{
+							Console.WriteLine($"Error - {ax.Message}");
+						}
+						catch
+						{
+							Console.WriteLine("Something went wrong! Please try again");
+						}
 						break;
 
 					case "3":
 						PrintAllUserIDs();
+						try
+						{
+							Console.Write("Select your UserID above: ");
+							var useID = Convert.ToInt32(Console.ReadLine());
 
-						Console.Write("Select your UserID above: ");
-						var userID = Convert.ToInt32(Console.ReadLine());
+							Console.Write("Amount to Deposit: ");
+							var amount = Convert.ToDecimal(Console.ReadLine());
 
-						Console.Write("Amount to Deposit: ");
-						var amount = Convert.ToDecimal(Console.ReadLine());
-
-						Exchange.Deposit(userID, amount);
-						Console.WriteLine("Deposit successfully completed!");
+							Exchange.Deposit(useID, amount);
+							Console.WriteLine("Deposit successfully completed!");
+						}
+						catch (FormatException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (OverflowException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (ArgumentException ax)
+						{
+							Console.WriteLine($"Error - {ax.Message}");
+						}
+						catch
+						{
+							Console.WriteLine("Something went wrong! Please try again");
+						}
 						break;
 
 					case "4":
 						PrintAllUserIDs();
+						try
+						{
+							Console.Write("Select your UserID above: ");
+							var usrID = Convert.ToInt32(Console.ReadLine());
 
-						Console.Write("Select your UserID above: ");
-						userID = Convert.ToInt32(Console.ReadLine());
+							Console.Write("Amount to Withdraw: ");
+							var amount = Convert.ToDecimal(Console.ReadLine());
 
-						Console.Write("Amount to Withdraw: ");
-						amount = Convert.ToDecimal(Console.ReadLine());
-
-						Exchange.Withdraw(userID, amount);
-						Console.WriteLine("Withdrawal successfully completed!");
+							Exchange.Withdraw(usrID, amount);
+							Console.WriteLine("Withdrawal successfully completed!");
+						}
+						catch (FormatException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (OverflowException)
+						{
+							Console.WriteLine("Input is invalid. Please try again!");
+						}
+						catch (ArgumentException ax)
+						{
+							Console.WriteLine($"Error - {ax.Message}");
+						}
+						catch
+						{
+							Console.WriteLine("Something went wrong! Please try again");
+						}
 						break;
 
 					case "5":
@@ -89,7 +144,7 @@ namespace GCExchange
 						PrintAllUserIDs();
 
 						Console.Write("Select your UserID above: ");
-						userID = Convert.ToInt32(Console.ReadLine());
+						var userID = Convert.ToInt32(Console.ReadLine());
 
 						var transactions = Exchange.GetTransactionsByUserID(userID);
 						foreach (var transaction in transactions)
