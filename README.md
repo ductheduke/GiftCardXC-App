@@ -1,1 +1,1 @@
-# GiftCardXC-App
+# Gift Card Exchange App
